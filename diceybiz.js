@@ -11,22 +11,42 @@
 //clicking on a dice on the page cause just that one die to update face value
 //double clicking a die removes is from the page. sumdice event must reflect this. (remove from screen, and array basically)
 
-
+container = document.getElementById('dice-container');
 
 class Die {
-    constructor(){
-        this.div = document.createElement('div');
-        this.div.classList.add('d6');
+    constructor() {
+        this.div = document.createElement('div'); //this line should create the dice div itself
+        this.div.innerText = `${randVal}`; //this line should have the dice display its face value
+        this.div.classList = 'd6'; //this line should give the div a class of 'd6'
+        // this.div.style.left = `${x}px`;
+        // this.dive.style.top = `${y}px`
+        this.randVal()
+        container.appendChild(this.div);
+    };
+    
+    randVal(min, max) {
+        let faceVal = 
+        return Math.floor(Math.random() * (max - min)) + min;
+    };
 
-    }
 
-    giveRoll(){
-        let roll = `${randVal(1,6)}`
-
-    }
+function makeDie() {
+    let d6die = new Die()
 }
 
 
-function randVal(min,max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+
+// };
+
+// document.addEventListener('DOMContentLoaded', function () {
+
+
+
+//     let btnAddDie = document.createElement('button');
+//     // btnAddSquare.innerText = 'Add D6';
+//     // btnAddSquare.className = 'btnAddDie'
+//     document.body.appendChild(btnAddDie);
+
+
+
+// });

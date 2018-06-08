@@ -1,0 +1,10 @@
+#dice-container {
+position: relative;
+}
+
+
+.d6 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
