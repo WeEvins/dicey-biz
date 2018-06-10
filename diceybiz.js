@@ -11,42 +11,45 @@
 //clicking on a dice on the page cause just that one die to update face value
 //double clicking a die removes is from the page. sumdice event must reflect this. (remove from screen, and array basically)
 
-container = document.getElementById('dice-container');
+const container = document.getElementById('dice-container');
 
+//create class 'die'
 class Die {
     constructor() {
+        //class has property 'value'
         this.div = document.createElement('div'); //this line should create the dice div itself
-        this.div.innerText = `${randVal}`; //this line should have the dice display its face value
         this.div.classList = 'd6'; //this line should give the div a class of 'd6'
-        // this.div.style.left = `${x}px`;
-        // this.dive.style.top = `${y}px`
-        this.randVal()
-        container.appendChild(this.div);
+        container.appendChild(this.div); //and here i want it to show up on the page
+        this.value = 1;
+        this.roll()
     };
     
-    randVal(min, max) {
-        let faceVal = 
-        return Math.floor(Math.random() * (max - min)) + min;
+    //class has method 'roll' that generates randomly 1-6, sets the 'value' property, and updates div with new value
+    
+    roll() {
+        this.value = Math.floor(Math.random() * (max - min)) + min;
+        this.div.innerText = this.value; //this line should have the dice display its face value
+         
     };
 
-
-function makeDie() {
-    let d6die = new Die()
-}
 
 
 
 // };
 
-// document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//     let btnAddDie = document.createElement('button');
-//     // btnAddSquare.innerText = 'Add D6';
-//     // btnAddSquare.className = 'btnAddDie'
-//     document.body.appendChild(btnAddDie);
+    let btnAddDie = document.createElement('button');
+    // btnAddSquare.innerText = 'Add D6';
+    // btnAddSquare.className = 'btnAddDie'
+    container.appendChild(btnAddDie);
 
 
 
-// });
+
+
+
+
+});
