@@ -25,13 +25,13 @@ class Die {
         this.value = 1;
         this.roll()
     };
-    
+
     //class has method 'roll' that generates randomly 1-6, sets the 'value' property, and updates div with new value
-    
+
     roll() {
         this.value = Math.floor(Math.random() * (7 - 1)) + 1;
         this.div.innerText = this.value; //this line should have the dice display its face value
-         
+
     };
 
 
@@ -42,16 +42,21 @@ class Die {
 document.addEventListener('DOMContentLoaded', function () {
 
 
-let testDie = new Die()
+    // let testDie = new Die()
 
-    // let btnAddDie = document.createElement('button');
-    // // btnAddSquare.innerText = 'Add D6';
-    // // btnAddSquare.className = 'btnAddDie'
-    // container.appendChild(btnAddDie);
-
-
+    let btnAddDie = document.createElement('button');
+    btnAddDie.innerText = 'Add D6';
+    btnAddDie.className = 'btnAddDie';
+    container.appendChild(btnAddDie);
 
 
+
+    btnAddDie.addEventListener('click', function () {
+        let newDie = new Die()
+        console.log(newDie);
+        
+
+    });
 
 
 
