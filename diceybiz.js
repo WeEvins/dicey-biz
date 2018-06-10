@@ -2,10 +2,12 @@
 //create class 'die'
 //class has property 'value'
 //class has method 'roll' that generates randomly 1-6, sets the 'value' property, and updates div with new value
+
 //page must contain button labled 'generate die'
 //clicking button must create new die object (creats new div, labled 1-6)
 //dice show up as a grid - see DOM DOM DOM lab
 //page need second button 'roll dice' that calls 'roll' on all generated dice to update their value
+
 
 //EXTRA: create sumdice function w/ trigger button to add all current face value of dice; displays alert
 //clicking on a dice on the page cause just that one die to update face value
@@ -27,7 +29,7 @@ class Die {
     //class has method 'roll' that generates randomly 1-6, sets the 'value' property, and updates div with new value
     
     roll() {
-        this.value = Math.floor(Math.random() * (max - min)) + min;
+        this.value = Math.floor(Math.random() * (7 - 1)) + 1;
         this.div.innerText = this.value; //this line should have the dice display its face value
          
     };
@@ -35,16 +37,17 @@ class Die {
 
 
 
-// };
+};
 
 document.addEventListener('DOMContentLoaded', function () {
 
 
+let testDie = new Die()
 
-    let btnAddDie = document.createElement('button');
-    // btnAddSquare.innerText = 'Add D6';
-    // btnAddSquare.className = 'btnAddDie'
-    container.appendChild(btnAddDie);
+    // let btnAddDie = document.createElement('button');
+    // // btnAddSquare.innerText = 'Add D6';
+    // // btnAddSquare.className = 'btnAddDie'
+    // container.appendChild(btnAddDie);
 
 
 
